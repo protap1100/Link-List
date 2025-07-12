@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void fun(int* p)
+void fun(int *&p)
 {
     // // *p = 100;
     // int y = 200;
+    // p = NULL;
     // cout << "In fun function :" << &p << endl;
     // p = &y;
     p = NULL;

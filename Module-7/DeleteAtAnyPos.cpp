@@ -12,6 +12,7 @@ public:
         this->next = NULL;
     }
 };
+
 void insertAtTail(Node *&head, int val, Node *&tail)
 {
     Node *newNode = new Node(val);
@@ -39,12 +40,13 @@ void deleteAtHead(Node *&head)
     head = head->next;
     delete deleteNode;
 }
-void deleteAtTail(Node *&tail)
-{
-    Node *deleteNode = tail;
-    tail = tail->next;
-    delete deleteNode;
-}
+// void deleteAtTail(Node *&tail)
+// {
+//     Node *deleteNode = tail;
+//     tail = tail->next;
+//     delete deleteNode;
+// }
+
 int main()
 {
     Node *head = NULL;
@@ -63,7 +65,6 @@ int main()
             insertAtTail(head, val, tail);
         }
     }
-    deleteAtHead(head);
     deleteAtHead(head);
     printLinkList(head);
     return 0;

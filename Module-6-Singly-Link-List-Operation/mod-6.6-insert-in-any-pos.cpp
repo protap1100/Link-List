@@ -12,12 +12,11 @@ public:
     }
 };
 
-
-void insertInAnyPosition(Node *&head, int index, int val)
+void insertInAnyPos(Node *head, int idx, int val)
 {
     Node *newNode = new Node(val);
-    Node *tmp = head; 
-    for (int i = 0; i < index - 1; i++)
+    Node *tmp = head;
+    for (int i = 0; i < idx - 1; i++)
     {
         tmp = tmp->next;
     }
@@ -25,8 +24,7 @@ void insertInAnyPosition(Node *&head, int index, int val)
     tmp->next = newNode;
 }
 
-
-void printLinkList(Node *head)
+void printingLinkedList(Node *head)
 {
     Node *tmp = head;
     while (tmp != NULL)
@@ -35,17 +33,16 @@ void printLinkList(Node *head)
         tmp = tmp->next;
     }
 }
+
 int main()
 {
-    // Node *head = NULL;
     Node *head = new Node(10);
     Node *a = new Node(20);
     Node *b = new Node(30);
     head->next = a;
     a->next = b;
+    insertInAnyPos(head, 2, 40);
+    printingLinkedList(head);
 
-    insertInAnyPosition(head, 2, 200);
-    insertInAnyPosition(head, 2, 100);
-    printLinkList(head);
     return 0;
 }

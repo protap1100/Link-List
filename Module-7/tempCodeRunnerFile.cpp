@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
 public:
@@ -12,6 +11,7 @@ public:
         this->next = NULL;
     }
 };
+
 void insertAtTail(Node *&head, int val, Node *&tail)
 {
     Node *newNode = new Node(val);
@@ -33,22 +33,10 @@ void printLinkList(Node *head)
         tmp = tmp->next;
     }
 }
-void deleteAtHead(Node *&head)
-{
-    Node *deleteNode = head;
-    head = head->next;
-    delete deleteNode;
-}
-void deleteAtTail(Node *&tail)
-{
-    Node *deleteNode = tail;
-    tail = tail->next;
-    delete deleteNode;
-}
+
 int main()
 {
     Node *head = NULL;
-    Node *tail = NULL;
 
     int val;
     while (true)
@@ -63,8 +51,6 @@ int main()
             insertAtTail(head, val, tail);
         }
     }
-    deleteAtHead(head);
-    deleteAtHead(head);
     printLinkList(head);
     return 0;
 }

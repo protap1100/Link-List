@@ -24,27 +24,22 @@ void insertAtTail(Node *&head, int val, Node *&tail)
     tail->next = newNode;
     tail = newNode;
 }
-void printLinkList(Node *head)
+void findDifBetweenMaxMin(Node *head)
 {
+    int min = head->val;
+    int max = head->val;
     Node *tmp = head;
     while (tmp != NULL)
     {
-        cout << tmp->val << endl;
+        if (tmp->val < min)
+            min = tmp->val;
+        if (tmp->val > max)
+            max = tmp->val;
         tmp = tmp->next;
     }
+    cout << (max - min) << endl;
 }
-void deleteAtHead(Node *&head)
-{
-    Node *deleteNode = head;
-    head = head->next;
-    delete deleteNode;
-}
-void deleteAtTail(Node *&tail)
-{
-    Node *deleteNode = tail;
-    tail = tail->next;
-    delete deleteNode;
-}
+
 int main()
 {
     Node *head = NULL;
@@ -63,8 +58,6 @@ int main()
             insertAtTail(head, val, tail);
         }
     }
-    deleteAtHead(head);
-    deleteAtHead(head);
-    printLinkList(head);
+    findDifBetweenMaxMin(head);
     return 0;
 }
